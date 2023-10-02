@@ -1,0 +1,34 @@
+#include<stdio.h>
+
+int main()
+{
+    int s, t;
+    printf("Enter your income per annum:\n");
+    scanf("%d", &s);
+
+    if(s <= 250000)
+    {
+        printf("There is no tax for income 250000 or less than 2.5 lakhs. Thank you.\n");
+    }
+    else if(s > 250000 && s <= 500000)
+    {
+        t = (s - 250000) * 0.05;
+        printf("Tax1: %d\n", t);
+    }
+    else if(s > 500000 && s <= 1000000)
+    {
+        t = (s - 500000) * 0.20 + 25000; // Fixed calculation for the second tax bracket
+        printf("Tax2: %d\n", t);
+    }
+    else if(s > 1000000)
+    {
+        t = (s - 1000000) * 0.30 + 125000; // Fixed calculation for the third tax bracket
+        printf("Tax3: %d\n", t);
+    }
+    else
+    {
+        printf("Invalid input.\n");
+    }
+
+    return 0;
+}
